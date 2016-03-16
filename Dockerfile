@@ -1,8 +1,9 @@
 FROM httpd
 
-CMD apt-get update \
+RUN apt-get update \
         && apt-get install -y git gcc make \
-        && git clone https://github.com/maiha/mod_cband /tmp/ \
+
+CMD git clone https://github.com/maiha/mod_cband /tmp/ \
         && cd /tmp/ \
         && ./configure \
         && make \
